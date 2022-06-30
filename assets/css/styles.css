@@ -1,5 +1,17 @@
+:root{
+    --clr-pry:#484848;
+    --clr-accent:rgb(220, 217, 217);
+    --clr-white:#fff;
+   
+
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 body {
-    color: #fff;
+    color: var(--clr-white);
     padding: 0;
     margin: 0;
     font-family: 'Roboto', sans-serif;
@@ -20,11 +32,11 @@ body {
     width: 95%;
     min-height: 95vh;
     margin: 1rem auto;
-    background-color: #484848;
+    background-color: var(--clr-pry);
     border-radius: 1.5rem;
 }
 /* ........................... Side BAr Section Css ............................. */
- #mainSection > .mainContainer > .sideBar {
+.sideBar {
     flex: 0.5;
     display: flex;
     flex-direction: column;
@@ -32,7 +44,7 @@ body {
     
 }
 
-#mainSection > .mainContainer > .sideBar > .sideBarIcon {
+.sideBar__icon {
     margin-top: 1.5rem;
     display: flex;
     align-items: center;
@@ -43,22 +55,23 @@ body {
     cursor: pointer;
 }
 
-#mainSection > .mainContainer > .sideBar > .sideBarIcon:first-child {
-    background-color: #fff;
-    color: rgb(72,72,72);
+.sideBar__icon.logo {
+    background-color: var(--clr-white);
+    color: var(--clr-pry);
 }
 
 
-#mainSection > .mainContainer > .sideBar > .sideBarIcon > .fa-heart {
-    color: rgb(220, 217, 217);
+.sideBar__icon {
+    color: var(--clr-accent);
 }
-
-#mainSection > .mainContainer > .sideBar > .sideBarIcon > .fa-compact-disc {
-    color: rgb(106, 105, 105);
+/*except first child*/
+.sideBar__icon:nth-child(n+2):hover, .sideBar__icon:nth-child(n+2):focus{
+    color: var(--clr-white);
+    transform: scale(1.1);
 }
 
 /* ........................... Station Section Css ............................. */
- #mainSection > .mainContainer > .stationContainer {
+.stationContainer {
     flex: 2;
     display: flex;
     align-items: center;
@@ -68,59 +81,67 @@ body {
    
 }
 /* ............................ Form ............................................. */
-#mainSection > .mainContainer > .stationContainer > form {
+#search-form {
     width: 100%;
     position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
-#mainSection > .mainContainer > .stationContainer > form > .search {
+#search-form > .search {
     width: 100%;
-    border: 1px solid #fff;
+    border: 1px solid var(--clr-white);
     border-radius: 1rem;
     padding: 0.75rem;
     box-sizing: border-box;
     background-color: transparent;
     outline: none;
     font-size: 1.1rem;
-    color: #fff;
+    color: var(--clr-white);
 }
 
-#mainSection > .mainContainer > .stationContainer > form > .search::placeholder {
-    color: rgb(247, 241, 241);
+#search-form > .search::placeholder {
+    color: var(--clr-accent);
     opacity: 0.8;
     font-size: 0.8rem;
 }
-#mainSection > .mainContainer > .stationContainer > form > .submit {
+#search-form > .submit {
     border: none;
     background-color: transparent;
-    color: rgb(247, 241, 241);
+    color: var(--clr-white);
     font-size: 1.4rem;
     position: absolute;
-    top: 25%;
     right: 2%;
     cursor: pointer;
+    color: var(--clr-accent);
+}
+#search-form > .submit i:hover, #search-form > .submit i:focus{
+    color: var(--clr-white);
+    transform: scale(1.1);
 }
 
 /* ............................ Station Info Section ............................................. */
-#mainSection > .mainContainer > .stationContainer > .stationInfo {
+.stationInfo {
     margin-top: 2rem;
    
     
 }
 
-#mainSection > .mainContainer > .stationContainer > .stationInfo > .stationImg {
+.stationInfo > .stationImg {
    max-width: 100%;
    border-radius: 1rem;
    object-fit: cover;
 } 
 
-#mainSection > .mainContainer > .stationContainer > .stationInfo > .stationTitle {
+.stationInfo > .stationTitle {
     margin-top: 1rem;
     font-weight: 400;
 }
 
 /* ............................ Radio Icons Section ............................................. */
-#mainSection > .mainContainer > .stationContainer > .radioButtons {
+.stationContainer > .radioButtons {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -128,23 +149,28 @@ body {
     margin-top: 1rem;
 }
 
-#mainSection > .mainContainer > .stationContainer > .radioButtons > .radioToggle {
-    font-size: 1.5rem;
+.stationContainer > .radioButtons > .radioToggle {
+    font-size: 1.3rem;
     display: flex;
     align-items: center;
     justify-content: space-around;
     cursor: pointer;
     opacity: 0.9;
     width: 70%;
+    color: var(--clr-accent);
+}
+.pause{
+    font-size: 2.5rem;
 }
 
-#mainSection > .mainContainer > .stationContainer > .radioButtons > .radioToggle:hover{
+.stationContainer > .radioButtons > .radioToggle:hover{
     opacity: 1;
+    color: var(--clr-white);
     transition: all ease-in-out;
 }
 
 /* ........................... Category Section Css ............................................. */
- #mainSection > .mainContainer > .category {
+.category {
     flex: 2;
     display: flex;
     align-items: center;
@@ -154,29 +180,44 @@ body {
     
 }
 
-#mainSection > .mainContainer > .category > .categoryContainer {
+.categoryContainer {
   margin-top: 5rem;
   width: 100%;
   background-color: #555555;
   border-radius: 1rem;
-  box-sizing: border-box;
-  padding: 0 1rem;
+  padding: 0.5rem;
   display: flex;
   flex-direction: column;
   
+  
+  
 }
-#mainSection > .mainContainer > .category > .categoryContainer > .categoryTitle {
-    font-weight: 500;
+.category > .categoryContainer > .categoryTitle {
+    font-weight: 400;
+    margin: 0.4rem 0;
     font-size: 1.2rem;
 }
 
-#mainSection > .mainContainer > .category > .categoryContainer > .categoryButtons {
+.category > .categoryContainer > .categoryButtons {
     display: flex;
     justify-content: space-around;
+    gap: 0.5rem;
+
     
 }
+.scrollX{
+    overflow: hidden;
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+/*Add scroll bar in chrome*/
+.scrollX::-webkit-scrollbar{
+    display: none;
+}
 
-#mainSection > .mainContainer > .category > .categoryContainer > .categoryButtons > button {
+
+.category > .categoryContainer > .categoryButtons > button {
     border: 1px solid #fff;
     border-radius: 1rem;
     padding: 0.3rem 1.5rem;
@@ -187,31 +228,31 @@ body {
     cursor: pointer;
 }
 
-#mainSection > .mainContainer > .category > .categoryContainer > .categoryButtons > .podcast {
+.category > .categoryContainer > .categoryButtons > .podcast {
     background-color: #fff;
     color: rgb(85, 83, 83);
 }
 
 /* ........................... Category Wrapper Css ............................................. */
-#mainSection > .mainContainer > .category > .categoryContainer > .categoryWrapper {
+.category > .categoryContainer > .categoryWrapper {
     margin-top: 1rem;
     display: flex;
-    overflow-x: hidden;
-    justify-content: space-evenly;
     width: 100%;
+    gap: 0.5rem;
+    
    
     
 }
 
-#mainSection > .mainContainer > .category > .categoryContainer > .categoryWrapper > .categoryCard {
-    width: 33%;
+.category > .categoryContainer > .categoryWrapper > .categoryCard {
+    width: 10rem;
     display: flex;
     flex-direction: column;
     text-align: center;
     
 }
 
-#mainSection > .mainContainer > .category > .categoryContainer > .categoryWrapper > .categoryCard > img {
+.category > .categoryContainer > .categoryWrapper > .categoryCard > img {
     max-width: 100%;
     object-fit: cover;
     border-top-left-radius: 0.275rem;
@@ -219,7 +260,7 @@ body {
     cursor: pointer;
 }
 
-#mainSection > .mainContainer > .category > .categoryContainer > .categoryWrapper > .categoryCard > .radioTitle {
+.category > .categoryContainer > .categoryWrapper > .categoryCard > .radioTitle {
     font-weight: 400;
     font-size: 1rem;
     margin: unset;
@@ -228,13 +269,13 @@ body {
     cursor: pointer;
 }
 
-#mainSection > .mainContainer > .category > .categoryContainer > .categoryWrapper > .categoryCard > .country {
+.category > .categoryContainer > .categoryWrapper > .categoryCard > .country {
     opacity: 0.8;
     font-size: 0.8rem;
 }
 
 /* ........................... Category Favorite Css ............................................. */
-#mainSection > .mainContainer > .category > .favoriteSection {
+.category > .favoriteSection {
     margin-top: 1.5rem;
     width: 100%;
     background-color: #555555;
@@ -243,14 +284,16 @@ body {
     padding: 0 1rem 1rem;
     display: flex;
     flex-direction: column;
+    padding: 0.5rem;
 }
 
-#mainSection > .mainContainer > .category > .favoriteSection > .favoriteTitle {
+.category > .favoriteSection > .favoriteTitle {
     font-size: 1.2rem;
-    font-weight: 500;
+    font-weight: 400;
+    margin: 0.4rem 0;
 }
 
-#mainSection > .mainContainer > .category > .favoriteSection > .favouriteCard {
+.category > .favoriteSection > .favouriteCard {
     display: flex;
     justify-content: space-between;
     padding: 0 1rem;
@@ -259,26 +302,26 @@ body {
     align-items: center;
 }
 
-#mainSection > .mainContainer > .category > .favoriteSection > .favouriteCard > .favoriteWrapper {
+.category > .favoriteSection > .favouriteCard > .favoriteWrapper {
     display: flex;
     
 }
 
-#mainSection > .mainContainer > .category > .favoriteSection > .favouriteCard > .favoriteWrapper > img {
+.category > .favoriteSection > .favouriteCard > .favoriteWrapper > img {
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 0.25rem;
     margin-right: 0.5rem;
 }
 
-#mainSection > .mainContainer > .category > .favoriteSection > .favouriteCard > .favoriteWrapper > .favoriteInfo {
+.category > .favoriteSection > .favouriteCard > .favoriteWrapper > .favoriteInfo {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
 
-#mainSection > .mainContainer > .category > .favoriteSection > .favouriteCard > .favoriteWrapper > .favoriteInfo > .favoriteInfoTitle {
+.category > .favoriteSection > .favouriteCard > .favoriteWrapper > .favoriteInfo > .favoriteInfoTitle {
     margin: 0;
     padding: 0;
     font-size: 0.7rem;
@@ -287,13 +330,13 @@ body {
     cursor: pointer;
 }
 
-#mainSection > .mainContainer > .category > .favoriteSection > .favouriteCard > .favoriteWrapper > .favoriteInfo > .favoriteInfoCountry {
+.category > .favoriteSection > .favouriteCard > .favoriteWrapper > .favoriteInfo > .favoriteInfoCountry {
     margin: 0;
     padding: 0;
     font-size: 0.7rem;
     font-weight: 500;
     opacity: 0.7;
 }
-#mainSection > .mainContainer > .category > .favoriteSection > .favouriteCard > .favouriteCardPlay {
+.category > .favoriteSection > .favouriteCard > .favouriteCardPlay {
     cursor: pointer;
 }

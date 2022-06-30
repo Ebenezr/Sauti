@@ -19,26 +19,27 @@
     <section id="mainSection">
       <div class="mainContainer">
         <div class="sideBar">
-          <div class="sideBarIcon">
+          <div class="sideBar__icon logo">
             <i class="fab fa-google-play"></i>
           </div>
-          <div class="sideBarIcon">
+          <div class="sideBar__icon">
             <i class="fas fa-home"></i>
           </div>
-          <div class="sideBarIcon">
+          <div class="sideBar__icon">
             <i class="fas fa-heart"></i>
           </div>
-          <div class="sideBarIcon">
+          <div class="sideBar__icon">
             <i class="fas fa-compact-disc"></i>
           </div>
         </div>
+        
         <div class="stationContainer">
-          <form id="form">
+          <form id="search-form">
             <input class="search" type="text" name="search" placeholder="Search by name" />
             <button class="submit"><i class="fas fa-search"></i></i></button>
           </form>
           <div class="stationInfo">
-            <img class="stationImg" src="./assets/images/figma.png" alt="stationImg">
+            <img class="stationImg" src="./assets/images/classic.jpg" alt="stationImg">
             <h2 class="stationTitle">CLASSIC FM</h2>
           </div>
           <div class="radioButtons">
@@ -46,7 +47,7 @@
            <div class="radioToggle">
             <i class="fas fa-random"></i>
             <i class="fas fa-step-backward"></i>
-            <i class="fas fa-pause-circle"></i>
+            <i class="fas fa-pause-circle pause" ></i>
             <i class="fas fa-step-forward"></i>
             <i class="fas fa-volume-up "></i>
            </div>
@@ -55,29 +56,30 @@
         <div class="category">
          <div class="categoryContainer">
           <h2 class="categoryTitle">RADIO CATEGORIES</h2>
-           <div class="categoryButtons">
+           <div class="categoryButtons scrollX">
             <button class="classics">CLASSICS</button>
             <button class="podcast">PODCAST</button>
             <button class="news">NEWS</button>
            </div>
-           <div class="categoryWrapper">
+           <div class="scrollX categoryWrapper ">
             <div class="categoryCard">
-              <img class="categoryImg" src="./assets/images/figma.png" alt="radioImg">
+              <img class="categoryImg" src="./assets/images/rog.jpg" alt="radioImg">
               <h3 class="radioTitle">ROG RADIO</h3>
               <p class="country">Kenya</p>
             </div>
             <div class="categoryCard">
-              <img class="categoryImg" src="./assets/images/figma.png" alt="radioImg">
-              <h3 class="radioTitle">ROG RADIO</h3>
+              <img class="categoryImg" src="./assets/images/podcast.jpg" alt="radioImg">
+              <h3 class="radioTitle">JOE ROGAN</h3>
               <p class="country">Kenya</p>
             </div>
+            
           </div>
          </div>
          <div class="favoriteSection">
           <h2 class="favoriteTitle">FAVORITES</h2>
           <div class="favouriteCard">
             <div class="favoriteWrapper">
-              <img src="./assets/images/figma.png" alt="favoriteImg">
+              <img src="./assets/images/classic.jpg" alt="favoriteImg">
               <div class="favoriteInfo">
                 <h4 class="favoriteInfoTitle">CLASSIC FM</h4>
                 <p class="favoriteInfoCountry">Kenya</p>
@@ -87,9 +89,9 @@
           </div>
           <div class="favouriteCard">
             <div class="favoriteWrapper">
-              <img src="./assets/images/figma.png" alt="favoriteImg">
+              <img src="./assets/images/rog.jpg" alt="favoriteImg">
               <div class="favoriteInfo">
-                <h4 class="favoriteInfoTitle">CLASSIC FM</h4>
+                <h4 class="favoriteInfoTitle">ROG RADIO</h4>
                 <p class="favoriteInfoCountry">Kenya</p>
               </div>
             </div>
@@ -97,6 +99,7 @@
           </div>
          </div>
         </div>
+      
       </div>
     </section>
     <script  src="./src/main.js"></script>
