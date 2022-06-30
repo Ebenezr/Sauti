@@ -22,11 +22,10 @@ body {
     height: 80%;
     width: 90%;
     margin: auto;
-    background-image: url("../images/dark\ cloud.jpg");
-    background-size: cover;
-    background-position: cover cover;
-    position: relative;
+    background-color: gray;
+    border-radius: 1rem;
 }
+
  #mainSection > .mainContainer > .sideBar {
     flex: 0.5;
     
