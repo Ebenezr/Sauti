@@ -1,17 +1,22 @@
-//api to be used
+document.addEventListener("DOMContentLoaded", init);
 
-const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': '99b1489bc1mshe4869d13ccb8365p164db9jsn74e1339350c1',
-		'X-RapidAPI-Host': '30-000-radio-stations-and-music-charts.p.rapidapi.com'
-	}
-};
+function init(){
+	fetchData()
+}
 
-fetch('https://30-000-radio-stations-and-music-charts.p.rapidapi.com/rapidapi?id=%7Bid%7D', options)
-	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
+const fetchData = (station = "Classic 105") => {
+	
+fetch(`https://at1.api.radio-browser.info/json/stations/byname/${station}`)
+.then(res => res.json())
+.then(data => data.forEach(item => renderStation(item)))
+.catch(err => console.error(err));
 
+}
 
-//its paid haha lets find another
+const renderStation = (search) => {
+  const radioUrl = search.url;
+  const stationName = search.name;
+  const country = search.country;
+  const format = search.codec;
+  console.log(stationName, country, format)
+}
