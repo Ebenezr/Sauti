@@ -1,0 +1,41 @@
+* {
+    padding: 0;
+    margin: 0;
+};
+
+body {
+    
+};
+
+#mainSection {
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(6deg, #081821 70%,#624b3c);
+}
+
+#mainSection > .mainContainer {
+    display: flex;
+    height: 80%;
+    width: 90%;
+    margin: auto;
+    background-image: url("../images/dark\ cloud.jpg");
+    background-size: cover;
+    background-position: cover cover;
+    position: relative;
+}
+ #mainSection > .mainContainer > .sideBar {
+    flex: 0.5;
+    
+}
+ #mainSection > .mainContainer > .stationContainer {
+    flex: 2;
+    background-color: aqua;
+}
+ #mainSection > .mainContainer > .categories {
+    flex: 2;
+    background-color: bisque;
+}
