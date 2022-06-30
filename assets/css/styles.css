@@ -6,7 +6,7 @@
 body {
     
 };
-
+/* ........................... Main Section Css ............................. */
 #mainSection {
     width: 100%;
     height: 100vh;
@@ -25,7 +25,7 @@ body {
     background-color: gray;
     border-radius: 1.5rem;
 }
-
+/* ........................... Side BAr Section Css ............................. */
  #mainSection > .mainContainer > .sideBar {
     flex: 0.5;
     display: flex;
@@ -62,10 +62,51 @@ body {
     color: rgb(74, 72, 72);
 }
 
+/* ........................... Station Section Css ............................. */
  #mainSection > .mainContainer > .stationContainer {
     flex: 2;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 2rem 1rem;
    
 }
+
+#mainSection > .mainContainer > .stationContainer > form {
+    width: 100%;
+    position: relative;
+}
+
+#mainSection > .mainContainer > .stationContainer > form > .search {
+    width: 100%;
+    border: 1px solid #fff;
+    border-radius: 1rem;
+    padding: 0.75rem;
+    box-sizing: border-box;
+    background-color: transparent;
+    color: #fff;
+    outline: none;
+    font-size: 1.1rem;
+}
+
+#mainSection > .mainContainer > .stationContainer > form > .search::placeholder {
+    color: rgb(247, 241, 241);
+    margin-left: 1rem;
+    opacity: 0.8;
+    font-size: 0.8rem;
+}
+#mainSection > .mainContainer > .stationContainer > form > .submit {
+    border: none;
+    background-color: transparent;
+    color: rgb(247, 241, 241);
+    font-size: 1.4rem;
+    position: absolute;
+    top: 25%;
+    right: 2%;
+    cursor: pointer;
+}
+/* ........................... Category Section Css ............................. */
  #mainSection > .mainContainer > .category {
     flex: 2;
     
