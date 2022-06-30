@@ -82,6 +82,7 @@ body {
     background-color: transparent;
     outline: none;
     font-size: 1.1rem;
+    color: #fff;
 }
 
 #mainSection > .mainContainer > .stationContainer > form > .search::placeholder {
@@ -133,8 +134,15 @@ body {
     align-items: center;
     justify-content: space-around;
     cursor: pointer;
+    opacity: 0.9;
     width: 70%;
 }
+
+#mainSection > .mainContainer > .stationContainer > .radioButtons > .radioToggle:hover{
+    opacity: 1;
+    transition: all ease-in-out;
+}
+
 /* ........................... Category Section Css ............................................. */
  #mainSection > .mainContainer > .category {
     flex: 2;
@@ -208,6 +216,7 @@ body {
     object-fit: cover;
     border-top-left-radius: 0.275rem;
     border-top-right-radius: 0.275rem;
+    cursor: pointer;
 }
 
 #mainSection > .mainContainer > .category > .categoryContainer > .categoryWrapper > .categoryCard > .radioTitle {
@@ -216,9 +225,75 @@ body {
     margin: unset;
     margin-top: 1rem;
     opacity: 0.9;
+    cursor: pointer;
 }
 
 #mainSection > .mainContainer > .category > .categoryContainer > .categoryWrapper > .categoryCard > .country {
     opacity: 0.8;
     font-size: 0.8rem;
+}
+
+/* ........................... Category Favorite Css ............................................. */
+#mainSection > .mainContainer > .category > .favoriteSection {
+    margin-top: 1.5rem;
+    width: 100%;
+    background-color: #555555;
+    border-radius: 1rem;
+    box-sizing: border-box;
+    padding: 0 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+#mainSection > .mainContainer > .category > .favoriteSection > .favoriteTitle {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+#mainSection > .mainContainer > .category > .favoriteSection > .favouriteCard {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+    align-items: center;
+}
+
+#mainSection > .mainContainer > .category > .favoriteSection > .favouriteCard > .favoriteWrapper {
+    display: flex;
+    
+}
+
+#mainSection > .mainContainer > .category > .favoriteSection > .favouriteCard > .favoriteWrapper > img {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 0.25rem;
+    margin-right: 0.5rem;
+}
+
+#mainSection > .mainContainer > .category > .favoriteSection > .favouriteCard > .favoriteWrapper > .favoriteInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#mainSection > .mainContainer > .category > .favoriteSection > .favouriteCard > .favoriteWrapper > .favoriteInfo > .favoriteInfoTitle {
+    margin: 0;
+    padding: 0;
+    font-size: 0.7rem;
+    font-weight: 500;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+#mainSection > .mainContainer > .category > .favoriteSection > .favouriteCard > .favoriteWrapper > .favoriteInfo > .favoriteInfoCountry {
+    margin: 0;
+    padding: 0;
+    font-size: 0.7rem;
+    font-weight: 500;
+    opacity: 0.7;
+}
+#mainSection > .mainContainer > .category > .favoriteSection > .favouriteCard > .favouriteCardPlay {
+    cursor: pointer;
 }
