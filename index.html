@@ -19,21 +19,22 @@
     <section id="mainSection">
       <div class="mainContainer">
         <div class="sideBar">
-          <div class="sideBarIcon">
+          <div class="sideBar__icon logo">
             <i class="fab fa-google-play"></i>
           </div>
-          <div class="sideBarIcon">
+          <div class="sideBar__icon">
             <i class="fas fa-home"></i>
           </div>
-          <div class="sideBarIcon">
+          <div class="sideBar__icon">
             <i class="fas fa-heart"></i>
           </div>
-          <div class="sideBarIcon">
+          <div class="sideBar__icon">
             <i class="fas fa-compact-disc"></i>
           </div>
         </div>
+        
         <div class="stationContainer">
-          <form id="form">
+          <form id="search-form">
             <input class="search" type="text" name="search" placeholder="Search by name" />
             <button class="submit"><i class="fas fa-search"></i></i></button>
           </form>
@@ -46,7 +47,7 @@
            <div class="radioToggle">
             <i class="fas fa-random"></i>
             <i class="fas fa-step-backward"></i>
-            <i class="fas fa-pause-circle"></i>
+            <i class="fas fa-pause-circle pause" ></i>
             <i class="fas fa-step-forward"></i>
             <i class="fas fa-volume-up "></i>
            </div>
@@ -55,12 +56,12 @@
         <div class="category">
          <div class="categoryContainer">
           <h2 class="categoryTitle">RADIO CATEGORIES</h2>
-           <div class="categoryButtons">
+           <div class="categoryButtons scrollX">
             <button class="classics">CLASSICS</button>
             <button class="podcast">PODCAST</button>
             <button class="news">NEWS</button>
            </div>
-           <div class="categoryWrapper">
+           <div class="scrollX categoryWrapper ">
             <div class="categoryCard">
               <img class="categoryImg" src="./assets/images/rog.jpg" alt="radioImg">
               <h3 class="radioTitle">ROG RADIO</h3>
@@ -68,9 +69,10 @@
             </div>
             <div class="categoryCard">
               <img class="categoryImg" src="./assets/images/podcast.jpg" alt="radioImg">
-              <h3 class="radioTitle">ROG RADIO</h3>
+              <h3 class="radioTitle">JOE ROGAN</h3>
               <p class="country">Kenya</p>
             </div>
+            
           </div>
          </div>
          <div class="favoriteSection">
@@ -97,6 +99,7 @@
           </div>
          </div>
         </div>
+      
       </div>
     </section>
     <script type="module" src="./src/main.js"></script>
