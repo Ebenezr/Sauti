@@ -1,10 +1,7 @@
-* {
+body {
+    color: #fff;
     padding: 0;
     margin: 0;
-};
-
-body {
-    
 };
 /* ........................... Main Section Css ............................. */
 #mainSection {
@@ -50,16 +47,13 @@ body {
     color: rgb(82, 79, 79);
 }
 
-#mainSection > .mainContainer > .sideBar > .sideBarIcon > .fa-home {
-    color: #fff;
-}
 
 #mainSection > .mainContainer > .sideBar > .sideBarIcon > .fa-heart {
     color: rgb(232, 230, 230);
 }
 
 #mainSection > .mainContainer > .sideBar > .sideBarIcon > .fa-compact-disc {
-    color: rgb(74, 72, 72);
+    color: rgb(47, 46, 46);
 }
 
 /* ........................... Station Section Css ............................. */
@@ -72,7 +66,7 @@ body {
     padding: 2rem 1rem;
    
 }
-
+/* ............................ Form ............................................. */
 #mainSection > .mainContainer > .stationContainer > form {
     width: 100%;
     position: relative;
@@ -85,7 +79,6 @@ body {
     padding: 0.75rem;
     box-sizing: border-box;
     background-color: transparent;
-    color: #fff;
     outline: none;
     font-size: 1.1rem;
 }
@@ -106,7 +99,43 @@ body {
     right: 2%;
     cursor: pointer;
 }
-/* ........................... Category Section Css ............................. */
+
+/* ............................ Station Info Section ............................................. */
+#mainSection > .mainContainer > .stationContainer > .stationInfo {
+    margin-top: 2rem;
+   
+    
+}
+
+#mainSection > .mainContainer > .stationContainer > .stationInfo > .stationImg {
+   max-width: 100%;
+   border-radius: 1rem;
+   object-fit: cover;
+} 
+
+#mainSection > .mainContainer > .stationContainer > .stationInfo > .stationTitle {
+    margin-top: 1rem;
+    font-weight: 500;
+}
+
+/* ............................ Radio Icons Section ............................................. */
+#mainSection > .mainContainer > .stationContainer > .radioIcon {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+#mainSection > .mainContainer > .stationContainer > .radioIcon > .radioToggle {
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    cursor: pointer;
+    width: 70%;
+}
+/* ........................... Category Section Css ............................................. */
  #mainSection > .mainContainer > .category {
     flex: 2;
     
