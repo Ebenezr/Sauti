@@ -17,6 +17,9 @@ const renderStation = (search) => {
   const radioUrl = search.url;
   const stationName = search.name;
   const country = search.country;
+  const countryCode = search.countrycode;
   const format = search.codec;
-  console.log(stationName, country, format)
+  const votes = search.votes;
+  const clickcount = seacrh.clickcount;
+  console.log(radioUrl)
 }
