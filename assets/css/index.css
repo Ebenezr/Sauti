@@ -1,7 +1,8 @@
 :root {
   --clr-pry: #484848;
-  --clr-accent: rgb(220, 217, 217);
+  --clr-accent: #555555;
   --clr-white: #fff;
+  --clr-disabled: #cdcbcb;
 }
 * {
   padding: 0;
@@ -24,13 +25,14 @@ main {
   height: 95%;
   background-color: var(--clr-pry);
   border-radius: 1.5rem;
-  padding: 1rem;
+  padding: 2rem;
   overflow: hidden;
   display: grid;
-  grid-template-columns: 10% 1fr;
-  grid-template-rows: 18% 1fr;
+  grid-template-columns: 7% 1fr;
+  grid-template-rows: 10% 1fr;
+  grid-gap: 1rem;
   grid-template-areas:
-    "nav header"
+    "header header"
     "nav main";
 }
 /* ***************************************** */
@@ -40,25 +42,19 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 1rem;
 }
 .sideBar__icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: 2rem 0;
   border-radius: 50%;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   cursor: pointer;
-}
-.sideBar__icon.logo {
-  background-color: var(--clr-white);
-  color: var(--clr-pry);
-  margin-bottom: 1rem;
 }
 
 .sideBar__icon {
-  color: var(--clr-accent);
+  color: var(--clr-disabled);
 }
 /*except first child*/
 .sideBar__icon:nth-child(n + 2):hover,
@@ -70,14 +66,28 @@ nav {
 /* search bar */
 header {
   grid-area: header;
-  width: 50%;
+  width: 100%;
+  /* background-color: grey; */
 
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-columns: 8% auto;
   align-items: center;
 }
+.logo {
+  /* background-color: var(--clr-white); */
+  font-size: 2.8rem;
+  color: var(--clr-pry);
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+.logo i {
+  background-color: var(--clr-white);
+  padding: 1rem;
+  border-radius: 50%;
+}
 #search-form {
+  width: 43%;
   position: relative;
   display: flex;
   align-items: center;
@@ -101,7 +111,7 @@ header {
   position: absolute;
   right: 3%;
   cursor: pointer;
-  color: var(--clr-accent);
+  color: var(--clr-disabled);
 }
 #search-form > .submit i:hover,
 #search-form > .submit i:focus {
@@ -115,19 +125,20 @@ header {
   width: 95%;
   height: 95%;
   background-color: var(--clr-pry);
-  border: 0.1rem #fff solid;
+
   display: grid;
   grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+  padding: 0.5rem;
 }
 /*****/
 .stationContainer {
   height: 100%;
-  display: grid;
-  grid-template-rows: 75% 1fr;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
-.stationInfo {
-  background-color: #484848;
-}
+
 .stationInfo > .stationImg {
   max-width: 90%;
   margin: 0 auto;
@@ -139,26 +150,174 @@ header {
   font-weight: 400;
 }
 .radioButtons {
+  position: absolute;
+  bottom: 9%;
+  width: 100%;
+  height: 5rem;
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 .radioButtons > .radioToggle {
   display: flex;
   align-items: center;
   flex-direction: row;
-  gap: 1rem;
+  gap: 2rem;
   justify-content: center;
   width: 100%;
 }
 .radioToggle i {
-  color: var(--clr-accent);
+  color: var(--clr-disabled);
+  font-size: 2rem;
 }
 .pause {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
 }
 .radioToggle i:hover {
   opacity: 1;
   color: var(--clr-white);
   transition: all ease-in-out;
+}
+/* ******************************* */
+/* category section */
+.category {
+  display: grid;
+  grid-template-rows: 65% auto;
+  grid-gap: 1rem;
+}
+.categoryContainer {
+  max-width: 100%;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 10% 18% auto;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  background-color: var(--clr-accent);
+}
+.categoryTitle {
+  font-weight: 400;
+  font-size: 1.8rem;
+}
+.categoryButtons {
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  overflow: hidden;
+  overflow-x: auto;
+  align-items: center;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+/*Add scroll bar in chrome*/
+.categoryButtons::-webkit-scrollbar {
+  display: none;
+}
+.categoryButtons > button {
+  border: 1px solid #fff;
+  border-radius: 1rem;
+  padding: 0.3rem 1rem;
+  background-color: transparent;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.categoryButtons > button:hover,
+.categoryButtons > button:focus {
+  background-color: #fff;
+  color: rgb(85, 83, 83);
+}
+.categoryWrapper {
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  gap: 1rem;
+  flex-direction: row;
+  overflow: hidden;
+  overflow-x: auto;
+  align-items: center;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.categoryWrapper::-webkit-scrollbar {
+  display: none;
+}
+.categoryCard {
+  min-width: 15rem;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.categoryCard > img {
+  max-width: 100%;
+  object-fit: cover;
+  border-top-left-radius: 0.275rem;
+  border-top-right-radius: 0.275rem;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+}
+/* **************************** */
+/* favorites section */
+.favoriteSection {
+  padding: 0.5rem 0;
+  overflow: hidden;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  background-color: var(--clr-accent);
+}
+
+.favoriteCardWrapper {
+  display: flex;
+  height: 12rem;
+  padding: 0.5rem 0;
+  flex-direction: column;
+  gap: 0.5rem;
+  overflow: hidden;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+/*Add scroll bar in chrome*/
+.favoriteCardWrapper::-webkit-scrollbar {
+  display: none;
+}
+.favouriteCard {
+  background-color: grey;
+  width: 95%;
+  height: 3rem;
+  margin: 0 auto;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.3rem 1rem;
+  box-sizing: border-box;
+  align-items: center;
+}
+.favoriteWrapper {
+  display: flex;
+}
+.favoriteWrapper > img {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.25rem;
+  margin-right: 0.5rem;
+}
+.favoriteInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.favoriteInfoTitle {
+  margin: 0;
+  padding: 0;
+  font-size: 0.7rem;
+  font-weight: 500;
+  opacity: 0.8;
+  cursor: pointer;
+}
+.favouriteCard > .favouriteCardPlay {
+  cursor: pointer;
 }

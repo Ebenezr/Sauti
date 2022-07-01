@@ -15,11 +15,19 @@
 
 <body>
     <main id="mainContainer">
-        <!-- left navigation bar -->
-        <nav class="sideBar">
-            <div class="sideBar__icon logo">
+        <!-- search bar -->
+        <header id="searchWrapper">
+            <div class="logo">
                 <i class="fab fa-google-play"></i>
             </div>
+            <form id="search-form">
+                <input class="search" type="text" name="search" placeholder="Search by name" />
+                <button class="submit"><i class="fas fa-search"></i></i></button>
+            </form>
+        </header>
+        <!-- left navigation bar -->
+        <nav class="sideBar">
+
             <div class="sideBar__icon">
                 <i class="fas fa-home"></i>
             </div>
@@ -30,13 +38,7 @@
                 <i class="fas fa-compact-disc"></i>
             </div>
         </nav>
-        <!-- search bar -->
-        <header id="searchWrapper">
-            <form id="search-form">
-                <input class="search" type="text" name="search" placeholder="Search by name" />
-                <button class="submit"><i class="fas fa-search"></i></i></button>
-            </form>
-        </header>
+
         <!-- main content section -->
         <section id="mainPanel">
             <article class="stationContainer">
@@ -63,15 +65,43 @@
                         <button class="classics">CLASSICS</button>
                         <button class="podcast">PODCAST</button>
                         <button class="news">NEWS</button>
+                        <button class="classics">CLASSICS</button>
+                        <button class="podcast">PODCAST</button>
+                        <button class="news">NEWS</button>
                     </div>
-                    <div class="scrollX categoryWrapper ">
+                    <div class="categoryWrapper ">
                         <div class="categoryCard">
-                            <!-- <img class="categoryImg" src="./assets/images/rog.jpg" alt="radioImg"> -->
+                            <img class="categoryImg" src="./assets/images/rog.jpg" alt="radioImg">
                             <h3 class="radioTitle">ROG RADIO</h3>
                             <p class="country">Kenya</p>
                         </div>
                         <div class="categoryCard">
-                            <!-- <img class="categoryImg" src="./assets/images/podcast.jpg" alt="radioImg"> -->
+                            <img class="categoryImg" src="./assets/images/podcast.jpg" alt="radioImg">
+                            <h3 class="radioTitle">JOE ROGAN</h3>
+                            <p class="country">Kenya</p>
+                        </div>
+                        <div class="categoryCard">
+                            <img class="categoryImg" src="./assets/images/rog.jpg" alt="radioImg">
+                            <h3 class="radioTitle">ROG RADIO</h3>
+                            <p class="country">Kenya</p>
+                        </div>
+                        <div class="categoryCard">
+                            <img class="categoryImg" src="./assets/images/podcast.jpg" alt="radioImg">
+                            <h3 class="radioTitle">JOE ROGAN</h3>
+                            <p class="country">Kenya</p>
+                        </div>
+                        <div class="categoryCard">
+                            <img class="categoryImg" src="./assets/images/podcast.jpg" alt="radioImg">
+                            <h3 class="radioTitle">JOE ROGAN</h3>
+                            <p class="country">Kenya</p>
+                        </div>
+                        <div class="categoryCard">
+                            <img class="categoryImg" src="./assets/images/rog.jpg" alt="radioImg">
+                            <h3 class="radioTitle">ROG RADIO</h3>
+                            <p class="country">Kenya</p>
+                        </div>
+                        <div class="categoryCard">
+                            <img class="categoryImg" src="./assets/images/podcast.jpg" alt="radioImg">
                             <h3 class="radioTitle">JOE ROGAN</h3>
                             <p class="country">Kenya</p>
                         </div>
@@ -79,26 +109,68 @@
                     </div>
                 </div>
                 <div class="favoriteSection">
-                    <h2 class="favoriteTitle">FAVORITES</h2>
-                    <div class="favouriteCard">
-                        <div class="favoriteWrapper">
-                            <!-- <img src="./assets/images/classic.jpg" alt="favoriteImg"> -->
-                            <div class="favoriteInfo">
-                                <h4 class="favoriteInfoTitle">CLASSIC FM</h4>
-                                <p class="favoriteInfoCountry">Kenya</p>
+                    <h2 class="categoryTitle">FAVORITES</h2>
+                    <div class="favoriteCardWrapper">
+                        <div class="favouriteCard">
+                            <div class="favoriteWrapper">
+                                <img src="./assets/images/classic.jpg" alt="favoriteImg">
+                                <div class="favoriteInfo">
+                                    <h4 class="favoriteInfoTitle">CLASSIC FM</h4>
+                                    <p class="favoriteInfoCountry">Kenya</p>
+                                </div>
                             </div>
+                            <i class="fas fa-play-circle favouriteCardPlay"></i>
                         </div>
-                        <i class="fas fa-play-circle favouriteCardPlay"></i>
-                    </div>
-                    <div class="favouriteCard">
-                        <div class="favoriteWrapper">
-                            <!-- <img src="./assets/images/rog.jpg" alt="favoriteImg"> -->
-                            <div class="favoriteInfo">
-                                <h4 class="favoriteInfoTitle">ROG RADIO</h4>
-                                <p class="favoriteInfoCountry">Kenya</p>
+                        <div class="favouriteCard">
+                            <div class="favoriteWrapper">
+                                <img src="./assets/images/rog.jpg" alt="favoriteImg">
+                                <div class="favoriteInfo">
+                                    <h4 class="favoriteInfoTitle">ROG RADIO</h4>
+                                    <p class="favoriteInfoCountry">Kenya</p>
+                                </div>
                             </div>
+                            <i class="fas fa-play-circle favouriteCardPlay"></i>
                         </div>
-                        <i class="fas fa-play-circle favouriteCardPlay"></i>
+                        <div class="favouriteCard">
+                            <div class="favoriteWrapper">
+                                <img src="./assets/images/rog.jpg" alt="favoriteImg">
+                                <div class="favoriteInfo">
+                                    <h4 class="favoriteInfoTitle">ROG RADIO</h4>
+                                    <p class="favoriteInfoCountry">Kenya</p>
+                                </div>
+                            </div>
+                            <i class="fas fa-play-circle favouriteCardPlay"></i>
+                        </div>
+                        <div class="favouriteCard">
+                            <div class="favoriteWrapper">
+                                <img src="./assets/images/classic.jpg" alt="favoriteImg">
+                                <div class="favoriteInfo">
+                                    <h4 class="favoriteInfoTitle">CLASSIC FM</h4>
+                                    <p class="favoriteInfoCountry">Kenya</p>
+                                </div>
+                            </div>
+                            <i class="fas fa-play-circle favouriteCardPlay"></i>
+                        </div>
+                        <div class="favouriteCard">
+                            <div class="favoriteWrapper">
+                                <img src="./assets/images/rog.jpg" alt="favoriteImg">
+                                <div class="favoriteInfo">
+                                    <h4 class="favoriteInfoTitle">ROG RADIO</h4>
+                                    <p class="favoriteInfoCountry">Kenya</p>
+                                </div>
+                            </div>
+                            <i class="fas fa-play-circle favouriteCardPlay"></i>
+                        </div>
+                        <div class="favouriteCard">
+                            <div class="favoriteWrapper">
+                                <img src="./assets/images/rog.jpg" alt="favoriteImg">
+                                <div class="favoriteInfo">
+                                    <h4 class="favoriteInfoTitle">ROG RADIO</h4>
+                                    <p class="favoriteInfoCountry">Kenya</p>
+                                </div>
+                            </div>
+                            <i class="fas fa-play-circle favouriteCardPlay"></i>
+                        </div>
                     </div>
                 </div>
             </article>
