@@ -19,6 +19,18 @@ body {
   display: grid;
   place-items: center;
 }
+/* scrollbars style */
+/*Add scroll bar in chrome*/
+::-webkit-scrollbar {
+  width: 0.6rem;
+  border-radius: 0.3rem;
+  background: var(--clr-disabled);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--clr-accent);
+  -webkit-border-radius: 1ex;
+  -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.75);
+}
 /* main wrapper container */
 main {
   width: 95%;
@@ -35,7 +47,7 @@ main {
     "header header"
     "nav main";
 }
-ul {
+li {
   list-style: none;
 }
 /* ***************************************** */
@@ -222,6 +234,7 @@ header {
 .categoryButtons::-webkit-scrollbar {
   display: none;
 }
+
 .categoryButtons > button {
   border: 1px solid var(--clr-white);
   border-radius: 1rem;
@@ -249,11 +262,9 @@ header {
   overflow-y: auto;
   align-items: center;
   -ms-overflow-style: none;
-  scrollbar-width: none;
+  /* scrollbar-width: none; */
 }
-.categoryWrapper::-webkit-scrollbar {
-  display: none;
-}
+
 .categoryCard {
   width: 14rem;
   height: 20rem;
@@ -302,12 +313,10 @@ header {
   overflow: hidden;
   overflow-y: auto;
   -ms-overflow-style: none;
-  scrollbar-width: none;
+
+  /* scrollbar-width: none; */
 }
-/*Add scroll bar in chrome*/
-.favoriteCardWrapper::-webkit-scrollbar {
-  display: none;
-}
+
 .favouriteCard {
   background-color: grey;
   width: 95%;

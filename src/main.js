@@ -37,16 +37,6 @@ const renderStation = (search) => {
   // console.log(radioUrl);
 };
 
-//get random pics
-//fetch data from randomuserapi
-async function getAverters() {
-  const users = await fetch("https://randomuser.me/api/");
-  return users.json();
-}
-//apend random image to station card
-// function updateProfile(profile) {
-//   avatar.src = profile.results[0].picture.large;
-// }
 //funtion to render all the stations on load and play selected station
 
 function renderAllStation(data) {
