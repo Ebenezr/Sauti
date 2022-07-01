@@ -33,7 +33,8 @@ const renderStation = (search) => {
 };
 
 const stationsWrapper = document.getElementById("stations");
-
+const stationName = document.getElementById("stationTitle");
+const saudioPlayer = document.getElementById("audioControl");
 //get random pics
 //fetch data from randomuserapi
 async function getAverters() {
@@ -44,7 +45,7 @@ async function getAverters() {
 // function updateProfile(profile) {
 //   avatar.src = profile.results[0].picture.large;
 // }
-//funtion to render all the stations on load
+//funtion to render all the stations on load and play selected station
 
 function renderAllStation(data) {
   data.forEach((data) => {
@@ -58,6 +59,12 @@ function renderAllStation(data) {
      </div>
      `;
     stationsWrapper.appendChild(list);
+
+    //play
+    list.addEventListener("click", () => {
+      stationName.textContent = data.name;
+      saudioPlayer.src = data.url;
+    });
   });
 }
 async function getStations() {

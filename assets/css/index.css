@@ -249,8 +249,9 @@ header {
   display: none;
 }
 .categoryCard {
-  width: 12rem;
-  height: 80%;
+  width: 14rem;
+  height: 20rem;
+  /* background-color: grey; */
   display: flex;
   flex-direction: column;
   text-align: center;
