@@ -167,7 +167,7 @@ header {
 }
 .radioToggle i {
   color: var(--clr-disabled);
-  font-size: 2rem;
+  font-size: 3rem;
 }
 .pause {
   font-size: 3.5rem;
