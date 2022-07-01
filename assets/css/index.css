@@ -125,9 +125,8 @@ header {
 /* content panel */
 #mainPanel {
   grid-area: main;
-  width: 95%;
+  width: 97%;
   height: 95%;
-  background-color: var(--clr-pry);
 
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -140,6 +139,12 @@ header {
   display: flex;
   flex-direction: column;
   position: relative;
+}
+.tags {
+  font-size: 0.8rem;
+}
+.tags::before {
+  content: "#";
 }
 
 .stationInfo > .stationImg {
@@ -195,6 +200,7 @@ header {
   padding: 0.5rem;
   border-radius: 1rem;
   background-color: var(--clr-accent);
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 .categoryTitle {
   font-weight: 400;
@@ -217,18 +223,18 @@ header {
   display: none;
 }
 .categoryButtons > button {
-  border: 1px solid #fff;
+  border: 1px solid var(--clr-white);
   border-radius: 1rem;
   padding: 0.3rem 1rem;
   background-color: transparent;
-  color: #fff;
+  color: var(--clr-white);
   font-weight: 500;
   font-size: 1rem;
   cursor: pointer;
 }
 .categoryButtons > button:hover,
 .categoryButtons > button:focus {
-  background-color: #fff;
+  background-color: var(--clr-white);
   color: rgb(85, 83, 83);
 }
 .categoryWrapper {
@@ -264,7 +270,7 @@ header {
   cursor: pointer;
   margin-bottom: 0.5rem;
   height: 10rem;
-  background-color: #484848;
+  background-color: var(--clr-disabled);
 }
 
 .country {
@@ -284,6 +290,7 @@ header {
   padding: 0.5rem;
   border-radius: 1rem;
   background-color: var(--clr-accent);
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 .favoriteCardWrapper {

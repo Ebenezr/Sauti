@@ -1,24 +1,29 @@
 document.addEventListener("DOMContentLoaded", () => {
-  getStations().then((data) => {
-    console.log(data);
-    renderAllStation(data);
-    // for (let data of data.name) {
-    //   console.log(data);
-    // }
-    data.forEach((data) => {
-      console.log(data.name);
+  getStations()
+    .then((data) => renderAllStation(data))
+    .catch((error) => {
+      alert("Network Error");
     });
-  });
 });
+//get dom elements
+const stationsWrapper = document.getElementById("stations");
+const stationName = document.getElementById("stationTitle");
+const audioPlayer = document.getElementById("audioControl");
+const stationTag = document.getElementById("tag");
 
-// function init() {
-//   fetchData();
+//fetch all radio stations
+async function getStations() {
+  const users = await fetch(
+    "https://at1.api.radio-browser.info/json/stations/byname/station"
+  );
+  return users.json();
+}
 
 const fetchData = (station = "Classic 105") => {
   fetch(`https://at1.api.radio-browser.info/json/stations/byname/${station}`)
     .then((res) => res.json())
     .then((data) => data.forEach((item) => renderStation(item)))
-    .catch((err) => console.error(err));
+    .catch((err) => alert("Network Error"));
 };
 
 const renderStation = (search) => {
@@ -29,12 +34,9 @@ const renderStation = (search) => {
   const format = search.codec;
   const votes = search.votes;
   const clickcount = seacrh.clickcount;
-  console.log(radioUrl);
+  // console.log(radioUrl);
 };
 
-const stationsWrapper = document.getElementById("stations");
-const stationName = document.getElementById("stationTitle");
-const saudioPlayer = document.getElementById("audioControl");
 //get random pics
 //fetch data from randomuserapi
 async function getAverters() {
@@ -60,16 +62,11 @@ function renderAllStation(data) {
      `;
     stationsWrapper.appendChild(list);
 
-    //play
+    //play seleceted station
     list.addEventListener("click", () => {
       stationName.textContent = data.name;
-      saudioPlayer.src = data.url;
+      audioPlayer.src = data.url;
+      stationTag.textContent = data.tags;
     });
   });
-}
-async function getStations() {
-  const users = await fetch(
-    "https://at1.api.radio-browser.info/json/stations/byname/station"
-  );
-  return users.json();
 }
