@@ -260,6 +260,16 @@ header {
   cursor: pointer;
   margin-bottom: 0.5rem;
 }
+
+.country {
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+.rate {
+  font-size: 0.7rem;
+  font-weight: 400;
+}
+
 /* **************************** */
 /* favorites section */
 .favoriteSection {
