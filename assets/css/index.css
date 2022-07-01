@@ -35,6 +35,9 @@ main {
     "header header"
     "nav main";
 }
+ul {
+  list-style: none;
+}
 /* ***************************************** */
 /* navigation panel */
 nav {
@@ -259,6 +262,8 @@ header {
   border-top-right-radius: 0.275rem;
   cursor: pointer;
   margin-bottom: 0.5rem;
+  height: 10rem;
+  background-color: #484848;
 }
 
 .country {
