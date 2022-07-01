@@ -230,12 +230,14 @@ header {
 }
 .categoryWrapper {
   width: 95%;
+  height: 20rem;
   margin: 0 auto;
-  display: flex;
-  gap: 1rem;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: space-around;
+  grid-gap: 0.5rem;
   overflow: hidden;
-  overflow-x: auto;
+  overflow-y: auto;
   align-items: center;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -244,7 +246,7 @@ header {
   display: none;
 }
 .categoryCard {
-  min-width: 15rem;
+  width: 12rem;
   height: 80%;
   display: flex;
   flex-direction: column;
