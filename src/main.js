@@ -84,7 +84,9 @@ const renderOneStation = (search) => {
   function handleSubmit(event){
     event.preventDefault();
     const inputValue = event.target.search.value;
+    stationsWrapper.innerHTML="";
     fetchData(inputValue)   
+    renderAllStation(inputValue)
 }
 
 // Click event that fetch all station per country

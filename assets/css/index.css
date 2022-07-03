@@ -137,13 +137,12 @@ header {
 /* content panel */
 #mainPanel {
   grid-area: main;
-  width: 97%;
-  height: 95%;
-
+  overflow: hidden;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  overflow: hidden;
+  grid-template-rows: 100%;
   padding: 0.5rem;
+  /* background-color: #cdcbcb; */
 }
 /*****/
 .stationContainer {
@@ -167,36 +166,48 @@ header {
 }
 .stationInfo > .stationTitle {
   margin-top: 1rem;
-  font-weight: 400;
+  font-weight: 600;
+  font-size: 2.5rem;
 }
-.radioButtons {
-  position: absolute;
-  bottom: 9%;
-  width: 100%;
-  height: 5rem;
+.stationInfo > .stationCountry {
+  margin-top: 1rem;
+  font-weight: 500;
+  font-size: 2rem;
+}
+.stationInfo > .tags {
+  margin-top: 1rem;
+  font-weight: 300;
+  font-size: 1.5rem;
+  font-style: italic;
+}
+.audioPlayer {
+  min-height: 20%;
   display: flex;
   align-items: center;
-}
-.radioButtons > .radioToggle {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  gap: 2rem;
   justify-content: center;
-  width: 100%;
+  gap:1rem;
+
 }
-.radioToggle i {
+audio{
+  width: 50%;
+  max-height: 4rem;
+
+}
+
+.audioPlayer i {
   color: var(--clr-disabled);
   font-size: 3rem;
 }
-.pause {
-  font-size: 3.5rem;
+.like-btn{
+  background: transparent;
+  border: none;
 }
-.radioToggle i:hover {
-  opacity: 1;
+
+.like-btn i:hover, .like-btn i:focus {
+  transform: scale(1.1);
   color: var(--clr-white);
   transition: all ease-in-out;
-}
+} 
 /* ******************************* */
 /* category section */
 .category {
@@ -208,7 +219,7 @@ header {
   max-width: 100%;
   overflow: hidden;
   display: grid;
-  grid-template-rows: 10% 18% auto;
+  grid-template-rows: 6% 20% auto;
   padding: 0.5rem;
   border-radius: 1rem;
   background-color: var(--clr-accent);
@@ -221,6 +232,7 @@ header {
 .categoryButtons {
   width: 95%;
   margin: 0 auto;
+  height: 100%;
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
@@ -238,7 +250,7 @@ header {
 .categoryButtons > button {
   border: 1px solid var(--clr-white);
   border-radius: 1rem;
-  padding: 0.3rem 1rem;
+  padding: 0.5rem 2rem;
   background-color: transparent;
   color: var(--clr-white);
   font-weight: 500;
@@ -252,12 +264,12 @@ header {
 }
 .categoryWrapper {
   width: 95%;
-  height: 20rem;
+  height: 100%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: auto auto auto;
-  justify-content: space-around;
-  grid-gap: 0.5rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 1rem;
+  grid-gap: 1rem;
   overflow: hidden;
   overflow-y: auto;
   align-items: center;
@@ -266,15 +278,15 @@ header {
 }
 
 .categoryCard {
-  width: 14rem;
-  height: 20rem;
+  width: 100%;
+  height: 65%;
   /* background-color: grey; */
   display: flex;
   flex-direction: column;
   text-align: center;
 }
 .categoryCard > img {
-  max-width: 100%;
+  width: 100%;
   object-fit: cover;
   border-top-left-radius: 0.275rem;
   border-top-right-radius: 0.275rem;
@@ -306,13 +318,14 @@ header {
 
 .favoriteCardWrapper {
   display: flex;
-  height: 12rem;
+  height: 90%;
   padding: 0.5rem 0;
   flex-direction: column;
   gap: 0.5rem;
   overflow: hidden;
   overflow-y: auto;
   -ms-overflow-style: none;
+  
 
   /* scrollbar-width: none; */
 }
@@ -320,7 +333,6 @@ header {
 .favouriteCard {
   background-color: grey;
   width: 95%;
-  height: 3rem;
   margin: 0 auto;
   border-radius: 0.5rem;
   display: flex;
@@ -331,6 +343,7 @@ header {
 }
 .favoriteWrapper {
   display: flex;
+  
 }
 .favoriteWrapper > img {
   width: 2.5rem;
@@ -340,44 +353,25 @@ header {
 }
 .favoriteInfo {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  text-align: left;
   flex-direction: column;
 }
 .favoriteInfoTitle {
-  margin: 0;
-  padding: 0;
   font-size: 0.7rem;
   font-weight: 500;
-  opacity: 0.8;
-  cursor: pointer;
+
 }
+.favoriteInfoCountry {
+  font-size: 0.7rem;
+  font-weight: 300;
+  opacity: 0.8;
+
+}
+
 .favouriteCard > .favouriteCardPlay {
   cursor: pointer;
 }
 
-
-/* .categoryCard {
-  background-color: grey;
-  width: 95%;
-  height: 3rem;
-  margin: 0 auto;
-  border-radius: 0.5rem;
-  display: flex;
-  justify-content: space-between;
-  padding: 0.3rem 1rem;
-  box-sizing: border-box;
-  align-items: center;
-  margin-bottom: 0.5rem;
-} */
-
-/* <div class="categoryCard">
-<div class="cardWrapper">
-    <img src="./assets/images/rog.jpg" alt="categoryImg">
-    <div class="categoryInfo">
-        <h3 class="radioTitle">ROG RADIO</h3>
-        <span class="genre">Genre: <span class="genre"></span> </span>
-    </div>
-</div>
-<i class="fas fa-play-circle favouriteCardPlay"></i>
-</div> */
+.favouriteCard i{
+  font-size: 2.2rem;
+}
