@@ -355,3 +355,29 @@ header {
 .favouriteCard > .favouriteCardPlay {
   cursor: pointer;
 }
+
+
+/* .categoryCard {
+  background-color: grey;
+  width: 95%;
+  height: 3rem;
+  margin: 0 auto;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.3rem 1rem;
+  box-sizing: border-box;
+  align-items: center;
+  margin-bottom: 0.5rem;
+} */
+
+/* <div class="categoryCard">
+<div class="cardWrapper">
+    <img src="./assets/images/rog.jpg" alt="categoryImg">
+    <div class="categoryInfo">
+        <h3 class="radioTitle">ROG RADIO</h3>
+        <span class="genre">Genre: <span class="genre"></span> </span>
+    </div>
+</div>
+<i class="fas fa-play-circle favouriteCardPlay"></i>
+</div> */
