@@ -1,10 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-  getStations()
-    .then((data) => data.forEach(item => renderAllStation(item)))
-    .catch((error) => {
-      console.log(error);
-    });
-    fetchData();
+  fetchData();
+  getStations();
+  
 });
 
 //get dom elements
@@ -13,20 +10,27 @@ const stationName = document.getElementById("stationTitle");
 const stationCountry = document.getElementById("stationCountry");
 const audioPlayer = document.getElementById("audioControl");
 const stationTag = document.getElementById("tag");
+const countriesButton = document.querySelectorAll(".countries");
 
-//fetch all radio stations
+//fetch all radio stations by country
 async function getStations(country = "Kenya") {
+ 
   const users = await fetch(
     `https://at1.api.radio-browser.info/json/stations/bycountry/${country}`
-  );
-  return users.json();
+  )
+  .then(res => res.json())
+  .then((data) => data.forEach(item => renderAllStation(item)))
+  .catch((error) => {
+    console.log(error);
+  });
+  
 }
 
 
-//funtion to render all the stations on load and play selected station
+//function to render all the stations on load and play selected station
 
 function renderAllStation(data) {
-  console.log(data)
+  
   let list = document.createElement("li");
  
    
@@ -45,10 +49,12 @@ function renderAllStation(data) {
       stationName.textContent = data.name;
       audioPlayer.src = data.url;
       stationTag.textContent = data.tags;
+      stationCountry.textContent = data.country;
     });
   
 }
-     
+ 
+// function to fetch station by name 
 const fetchData = (station = "Classic 105") => {
   fetch(`https://at1.api.radio-browser.info/json/stations/byname/${station}`)
     .then((res) => res.json())
@@ -56,14 +62,13 @@ const fetchData = (station = "Classic 105") => {
     .catch((err) => console.log(err));
 };
 
+
+// function to render default station and station from form submit
 const renderOneStation = (search) => {
   const radioUrl = search.url;
   const station = search.name;
   const country = search.country;
-  // const countryCode = search.countrycode;
-  // const format = search.codec;
-  // const votes = search.votes;
-  // const clickcount = search.clickcount;
+ 
 
   stationName.textContent = station;
   stationCountry.textContent = country;
@@ -82,3 +87,5 @@ const renderOneStation = (search) => {
     fetchData(inputValue)   
 }
 
+// Click event that fetch all station per country
+countriesButton.forEach(button => button.addEventListener("click", ()=> getStations(button.textContent)))
