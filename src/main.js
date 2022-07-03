@@ -5,9 +5,11 @@ document.addEventListener("DOMContentLoaded", () => {
       alert("Network Error");
     });
 });
+
 //get dom elements
 const stationsWrapper = document.getElementById("stations");
 const stationName = document.getElementById("stationTitle");
+const stationCountry = document.getElementById("stationCountry");
 const audioPlayer = document.getElementById("audioControl");
 const stationTag = document.getElementById("tag");
 
@@ -19,23 +21,6 @@ async function getStations() {
   return users.json();
 }
 
-const fetchData = (station = "Classic 105") => {
-  fetch(`https://at1.api.radio-browser.info/json/stations/byname/${station}`)
-    .then((res) => res.json())
-    .then((data) => data.forEach((item) => renderStation(item)))
-    .catch((err) => alert("Network Error"));
-};
-
-const renderStation = (search) => {
-  const radioUrl = search.url;
-  const stationName = search.name;
-  const country = search.country;
-  const countryCode = search.countrycode;
-  const format = search.codec;
-  const votes = search.votes;
-  const clickcount = seacrh.clickcount;
-  // console.log(radioUrl);
-};
 
 //funtion to render all the stations on load and play selected station
 
@@ -60,3 +45,38 @@ function renderAllStation(data) {
     });
   });
 }
+
+const fetchData = (station = "Classic 105") => {
+  fetch(`https://at1.api.radio-browser.info/json/stations/byname/${station}`)
+    .then((res) => res.json())
+    .then((data) => data.forEach((item) => renderOneStation(item)))
+    .catch((err) => console.log(err));
+};
+
+const renderOneStation = (search) => {
+  const radioUrl = search.url;
+  const stationName = search.name;
+  const country = search.country;
+  const countryCode = search.countrycode;
+  const format = search.codec;
+  const votes = search.votes;
+  const clickcount = search.clickcount;
+
+  stationName.textContent = search.name;
+  stationCountry.textContent = country;
+  stationTag.textContent = search.tags;
+  audioPlayer.src = radioUrl;
+};
+
+
+  const searchForm =document.querySelector("#search-form");
+
+  searchForm.addEventListener("submit", handleSubmit);
+
+  function handleSubmit(event){
+    event.preventDefault();
+    const inputValue = event.target.search.value;
+    fetchData(inputValue)   
+}
+
+fetchData()
