@@ -53,7 +53,7 @@ function renderAllStation(data) {
     });
   
 }
- 
+
 // function to fetch station by name 
 const fetchData = (station = "Classic 105") => {
   fetch(`https://at1.api.radio-browser.info/json/stations/byname/${station}`)
@@ -77,17 +77,17 @@ const renderOneStation = (search) => {
 };
 
 
-  const searchForm =document.querySelector("#search-form");
+  // const searchForm =document.querySelector("#search-form");
 
-  searchForm.addEventListener("submit", handleSubmit);
+  // searchForm.addEventListener("submit", handleSubmit);
 
-  function handleSubmit(event){
-    event.preventDefault();
-    const inputValue = event.target.search.value;
-    stationsWrapper.innerHTML="";
-    fetchData(inputValue)   
-    renderAllStation(inputValue)
-}
+  // function handleSubmit(event){
+  //   event.preventDefault();
+  //   const inputValue = event.target.search.value;
+  //   stationsWrapper.innerHTML="";
+  //   fetchData(inputValue)   
+  //   renderAllStation(inputValue)
+  //   }
 
 // Click event that fetch all station per country
 countriesButton.forEach(button => button.addEventListener("click", ()=> getStations(button.textContent)))
