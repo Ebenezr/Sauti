@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
 });
 
+let url = 'https://at1.api.radio-browser.info/json/stations';
 //get dom elements
 const stationsWrapper = document.getElementById("stations");
 const stationName = document.getElementById("stationTitle");
@@ -15,14 +16,10 @@ const countriesButton = document.querySelectorAll(".countries");
 //fetch all radio stations by country
 async function getStations(country = "Kenya") {
  
-  const users = await fetch(
-    `https://at1.api.radio-browser.info/json/stations/bycountry/${country}`
-  )
+  const users = await fetch(`${url}/bycountry/${country}`)
   .then(res => res.json())
   .then((data) => data.forEach(item => renderAllStation(item)))
-  .catch((error) => {
-    console.log(error);
-  });
+  .catch((error) =>alert('Unable to connect'));
   
 }
 
@@ -56,10 +53,10 @@ function renderAllStation(data) {
 
 // function to fetch station by name 
 const fetchData = (station = "Classic 105") => {
-  fetch(`https://at1.api.radio-browser.info/json/stations/byname/${station}`)
+  fetch(`${url}/byname/${station}`)
     .then((res) => res.json())
     .then((data) => data.forEach((item) => renderOneStation(item)))
-    .catch((err) => console.log(err));
+    .catch((err) => alert('Unable to connect'));
 };
 
 
