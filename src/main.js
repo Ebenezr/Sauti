@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  fetchData();
+  fetchData();//call
   getStations();
   
 });

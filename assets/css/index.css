@@ -1,3 +1,4 @@
+/* colors palete variables */
 :root {
   --clr-pry: #484848;
   --clr-accent: #555555;
@@ -19,7 +20,7 @@ body {
   display: grid;
   place-items: center;
 }
-/* scrollbars style */
+/* scrollbars style section */
 /*Add scroll bar in chrome*/
 ::-webkit-scrollbar {
   width: 0.6rem;
@@ -58,6 +59,7 @@ nav {
   flex-direction: column;
   align-items: center;
 }
+/* icons */
 .sideBar__icon {
   display: flex;
   align-items: center;
@@ -188,6 +190,7 @@ header {
   gap:1rem;
 
 }
+/* audio control */
 audio{
   width: 50%;
   max-height: 4rem;
